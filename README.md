@@ -34,12 +34,11 @@ Apply for an API key here: https://way2enjoy.com/developers
 
 ### 三.配置脚本并运行
 
-**[点击此处下载脚本(右键 -> 另存为)](https://raw.githubusercontent.com/GcsSloop/TinyPng/master/tinypng.py)**
 
 下载完该脚本后，你需要简单编辑一下该脚本，将申请到到API key 填写进去。
 
 ```
-tinify.key = "你申请到的API key"
+way2enjoypy.key = "你申请到的API key"
 ```
 
 之后你可以将该脚本放入到需要压缩的图片的文件夹下，然后在命令行(终端)中进入到该文件夹，执行如下命令即可:
@@ -52,9 +51,6 @@ python tinypng.py
 
 **运行示例及大小对比(有图有真相):**
 
-![](http://ww3.sinaimg.cn/large/005Xtdi2jw1f4mdtld2r9j30rs0hctcc.jpg)
-
-![](http://ww2.sinaimg.cn/large/005Xtdi2jw1f4mdy2e8zjj30rs0hcwir.jpg)
 
 ### 四.支持参数
 
@@ -62,10 +58,10 @@ python tinypng.py
 
 参数  | 参数类型 | 摘要                               | 示例
 :----:|----------|------------------------------------|-----------------------------
- 无参 |          | 压缩当前文件夹下所有图片文件       | `tinypng.py` 
-`－f` | 图像文件 | 压缩指定的单个文件                 | `tinypng.py -f /User/GcsSloop/demo.jpg`
-`－d` | 文件夹   | 压缩指定文件夹下所有图片文件       | `tinypng.py -d /User/GcsSloop/DemoDir`
- `-w` | 整型数字 | 压缩后图片的宽度，不指定则宽度不变 | `tinypng.py -w 300`
+ 无参 |          | 压缩当前文件夹下所有图片文件       | `way2enjoy.py` 
+`－f` | 图像文件 | 压缩指定的单个文件                 | `way2enjoy.py -f /User/GcsSloop/demo.jpg`
+`－d` | 文件夹   | 压缩指定文件夹下所有图片文件       | `way2enjoy.py -d /User/GcsSloop/DemoDir`
+ `-w` | 整型数字 | 压缩后图片的宽度，不指定则宽度不变 | `way2enjoy.py -w 300`
 
 **参数优先级:**
 ```
@@ -80,9 +76,9 @@ python tinypng.py
 `－w` 用于指定压缩后图片的宽度(width)高度自适应缩放，所以均可使用，(选项没有先后顺序)示例如下:
 
 ```
-tinypng.py －w 300                              // 压缩当前目录所有图片文件，压缩后文件跨度为300
+way2enjoy.py －w 300                              // 压缩当前目录所有图片文件，压缩后文件跨度为300
 
-tinypng.py －w 300 -f /User/GcsSloop/demo.jpg   // 指定压缩一个文件，压缩后文件宽度为300
+way2enjoy.py －w 300 -f /User/GcsSloop/demo.jpg   // 指定压缩一个文件，压缩后文件宽度为300
 ```
 
 ### 五.辅助优化
@@ -94,35 +90,27 @@ tinypng.py －w 300 -f /User/GcsSloop/demo.jpg   // 指定压缩一个文件，�
 如果你觉得每次都需要复制 `tinypng.py` 文件到需要压缩到目录太麻烦， 可以将该脚本存储到一个文件夹中， 之后将该文件夹添加进环境变量，就能在任意位置执行该脚本了,(仅适用于 Linux 和 OS X 平台)
 使用命令直接是文件名，前面无需加python,如:
 ```
-tinypng.py
+way2enjoy.py
 ```
 
 如果使用直接使用文件名无法执行，则说明文件没有可执行权限，使用如下命令添加可执行权限:
 ```
-chmod +x tinypng.py
+chmod +x way2enjoy.py
 ```
 
-[Mac 配置环境变量](https://github.com/GcsSloop/MacDeveloper/blob/master/Skill/Path.md)
 
+**Boot from current directory (for OS X platform)::**
+If it is cumbersome to enter a directory from the command line, on the Mac you can use the XtraFinder plugin to add a boot option from the current directory to your right button, launch the terminal directly in the current directory, and add it in XtraFinder To preferences. inside.
 
-**从当前目录启动(适用于 OS X 平台):**
+## Update log
 
-如果从命令行中进入到某个目录比较麻烦，所以在 Mac 上你可以使用 XtraFinder 插件来给你的右键添加一个从当前目录启动选项，直接在当前目录下启动终端，添加方式在 XtraFinder 到偏好设置里面。
-
-[点击这里查看Finder增强插件到安装方法](https://github.com/GcsSloop/MacDeveloper/blob/master/Tools/XtraFinder.md)
-
-![](http://ww3.sinaimg.cn/large/005Xtdi2gw1f4kl9j34vij30rs0hcabg.jpg)
-
-## 更新日志
-
-* v1.0.0 支持压缩当前目录下文件
-* v1.0.1 添加参数支持，支持压缩单个文件，压缩指定目录所有图片文件(不包含子目录)，默认压缩当前目录的所有图片文件(不包括子目录)
+* V1.0.0 supports compression of files in the current directory
+* V1.0.1 adds parameter support, supports compression of a single file, compresses all image files in the specified directory (excluding subdirectories), and compresses all image files in the current directory by default (excluding subdirectories)
 
 ## About Me
 
-### 作者微博: [@GcsSloop](http://weibo.com/GcsSloop)
+###  [@way2enjoy2](https://way2enjoy.com)
 
-<a href="https://github.com/GcsSloop/README/blob/master/README.md" target="_blank"> <img src="http://ww4.sinaimg.cn/large/005Xtdi2gw1f1qn89ihu3j315o0dwwjc.jpg" width=300 height=100 /> </a>
 
 
 ## License
