@@ -47,7 +47,7 @@ You can then put the script into the folder of the image you want to compress, a
 python way2enjoy.py
 ```
 
-The generated file will be saved in a folder named tiny in the current directory.
+The generated file will be saved in a folder named way2enjoy in the current directory.
 
 **Run example and size comparison (there is a picture with the truth):**
 
