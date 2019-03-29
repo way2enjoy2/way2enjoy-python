@@ -30,70 +30,70 @@ Way2enjoy: https://Way2enjoy.com/
 Apply for an API key here: https://way2enjoy.com/developers
 
 >
-一个 key 每个月可以免费压缩500张图片，可以申请多个 key。
+一个 key You can compress 500 images per month for free, you can apply for multiple key。
 
-### 三.配置脚本并运行
+### 三.Configuring the script and running
 
 
-下载完该脚本后，你需要简单编辑一下该脚本，将申请到到API key 填写进去。
-
-```
-way2enjoypy.key = "你申请到的API key"
-```
-
-之后你可以将该脚本放入到需要压缩的图片的文件夹下，然后在命令行(终端)中进入到该文件夹，执行如下命令即可:
+After downloading the script, you need to simply edit the script and fill in the application to the API key.
 
 ```
-python tinypng.py
+way2enjoypy.key = "Way2enjoy API key"
 ```
 
-生成的文件会存入当前目录下一个名为tiny的文件夹中。
+You can then put the script into the folder of the image you want to compress, and then enter the folder in the command line (terminal), execute the following command:
 
-**运行示例及大小对比(有图有真相):**
+```
+python way2enjoy.py
+```
+
+The generated file will be saved in a folder named tiny in the current directory.
+
+**Run example and size comparison (there is a picture with the truth):**
 
 
-### 四.支持参数
+### Fourth, support parameters
 
-在 v1.0.1 版本中进行了参数支持，详情见下表:
+in v1.0.1 Parameter support is provided in the version. See the table below for details.:
 
-参数  | 参数类型 | 摘要                               | 示例
+Options  | Options Type| Summary                               | Example
 :----:|----------|------------------------------------|-----------------------------
- 无参 |          | 压缩当前文件夹下所有图片文件       | `way2enjoy.py` 
-`－f` | 图像文件 | 压缩指定的单个文件                 | `way2enjoy.py -f /User/GcsSloop/demo.jpg`
-`－d` | 文件夹   | 压缩指定文件夹下所有图片文件       | `way2enjoy.py -d /User/GcsSloop/DemoDir`
- `-w` | 整型数字 | 压缩后图片的宽度，不指定则宽度不变 | `way2enjoy.py -w 300`
+ No reference |          | Compress all image files in the current folder      | `way2enjoy.py` 
+`－f` | Image file | Compress the specified single file                 | `way2enjoy.py -f /User/GcsSloop/demo.jpg`
+`－d` | folder   | Compress all image files in the specified folder       | `way2enjoy.py -d /User/GcsSloop/DemoDir`
+ `-w` | Integer number | The width of the compressed image, the width is unchanged if not specified | `way2enjoy.py -w 300`
 
-**参数优先级:**
+**Parameter priority:**
 ```
   －f > －d > 无参
 ```
-如果指定了 `－f` 则只会压缩指定文件，即使后续跟了 `－d` 也不会压缩指定的文件夹
+If specified `－f` Will only compress the specified file, even if it follows `－d` Will not compress the specified folder
 
 ```
- －w 无冲突，均可使用
+ －w No conflict, can be used
 ```
 
-`－w` 用于指定压缩后图片的宽度(width)高度自适应缩放，所以均可使用，(选项没有先后顺序)示例如下:
+`－w` It is used to specify that the width of the compressed image is highly adaptively scaled, so it can be used. (The options are not in order.):
 
 ```
-way2enjoy.py －w 300                              // 压缩当前目录所有图片文件，压缩后文件跨度为300
+way2enjoy.py －w 300                              // Compress all image files in the current directory. After compression, the file span is 300.Specifies to compress a file with a file width of 300 after compression.
 
-way2enjoy.py －w 300 -f /User/GcsSloop/demo.jpg   // 指定压缩一个文件，压缩后文件宽度为300
+way2enjoy.py －w 300 -f /User/GcsSloop/demo.jpg   // Specifies to compress a file with a file width of 300 after compression.
 ```
 
-### 五.辅助优化
+### V. Auxiliary optimization
 
-这一步不是必要的步骤，只是帮助你优化一些内容:
+This step is not a necessary step, just to help you optimize some content:
 
-**任意位置启动(适用于 Linux 和 OS X 平台):**
+**Boot anywhere (for Linux and OS X platforms):**
 
-如果你觉得每次都需要复制 `tinypng.py` 文件到需要压缩到目录太麻烦， 可以将该脚本存储到一个文件夹中， 之后将该文件夹添加进环境变量，就能在任意位置执行该脚本了,(仅适用于 Linux 和 OS X 平台)
-使用命令直接是文件名，前面无需加python,如:
+If you feel that you need to copy every time`way2enjoy.py` Files are too cumbersome to compress to a directory. You can store the script in a folder and then add the folder to the environment variable to execute the script from anywhere (Linux and OS X platforms only)
+The command is directly the file name, no need to add python before, such as:
 ```
 way2enjoy.py
 ```
 
-如果使用直接使用文件名无法执行，则说明文件没有可执行权限，使用如下命令添加可执行权限:
+If the file name cannot be used directly, the file has no executable permissions. Use the following command to add executable permissions:
 ```
 chmod +x way2enjoy.py
 ```
